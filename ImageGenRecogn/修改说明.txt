@@ -1,0 +1,40 @@
+建议1：
+class RecDetect增加如下public成员函数和一个结构体
+struct  _result
+{
+	int  nX; 		//识别图形的中心X坐标（屏幕坐标系）
+	int  nY;		//识别图形的中心Y坐标（屏幕坐标系）
+	int  nType;	//识别图形的类型编号
+}
+（1）struct  _result增加在类外
+原因：为了不直接访问类数据成员，而且保持
+rd.GetResult(vecResult);形式。
+（2）结构：struct  _result
+{
+	int  nX; 		//识别图形的中心X坐标（屏幕坐标系）
+	int  nY;		//识别图形的中心Y坐标（屏幕坐标系）
+	int  nType;	//识别图形的类型编号
+	int data;//识别数字
+};
+将输出的结果集成在一起，可供外部调用
+建议2：
+
+int  GetResult(vector<_result>& vecResult);
+参数：输出识别出的所有图形的数据。
+返回值：识别出的图形个数。
+功能说明：函数调用需先清空vecResult，之后将识别的图形相关数据填入这个vector。返回值为0表示没有找到可识别图形。
+已增加，内部有输出图像效果的功能，不需要可删掉
+建议3：
+void  SetInputImage(IplImage* image);
+参数：输入摄像头捕捉画面
+功能说明：使用这个函数取代之前的直接访问类数据成员。
+增加函数：
+void SetInputImage(IplImage* image,int low,/*检索矩形边长下限*/int high,/*检索矩形边长上限*/int mode);/
+
+为保持外部调用就会简洁，避免使用者出错，降低使用难度。设定检索矩形的边长范围，默认25,220，单位：像素
+mode
+mode:普通图像处理模式，mode=0，普通模式；mode=1，图像增强模式（增加了开闭运算）
+
+其他修改：部分修改检索矩形函数，并由此增加两个函数（这个上次就改好了，结果给你传错了，是未竟版本）
+	int minPoint(unsigned int a,unsigned int b,unsigned int c,unsigned int d);//寻找顶点最小点（x或y）
+	int maxPoint(unsigned int a,unsigned int b,unsigned int c,unsigned int d);//寻找顶点最大点（x或y）

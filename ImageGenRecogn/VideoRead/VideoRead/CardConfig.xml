@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Config>
+	<CardParam>
+		<!--CG 或者 QP-->
+		<CardType>QP</CardType>
+		<!--
+			COMPOSITE_VIDEO		= 0,
+			S_VIDEO  			= 1,
+			COMPONENT_VIDEO		= 2
+		-->
+		<VideoSource>0</VideoSource>
+		<SourceIndex>1</SourceIndex>
+		<!--
+			RGB888(彩色)	= 1,
+			ALL8BIT(灰阶)	= 5,
+		-->
+		<VideoFormat>1</VideoFormat>
+	</CardParam>
+	<!--
+		1X1		= 0,
+		1X2 	= 1,
+		2X1		= 2,
+		1X3		= 3,
+		3X1		= 4,
+		1X4		= 5,
+		4X1		= 6,
+		2X2		= 7
+	-->
+	<AssemblyType>0</AssemblyType>
+	
+	<!--采集图像参数-->
+	<Capture>
+		<ImageSize width="640" height="480"/>
+		<ImageParam brightness="128" contrast="128" hue="128" saturation="128"/>
+		<Crop left="10" right="10" top="0" bottom="0"/>
+		<!--CW = 0, CCW = 1, _180 = 2, NOT_ROTATE = 3-->
+		<Rotate>2</Rotate>
+	</Capture>
+	<Capture>
+		<ImageSize width="640" height="480"/>
+		<ImageParam brightness="128" contrast="128" hue="128" saturation="128"/>
+		<Crop left="10" right="10" top="0" bottom="0"/>
+		<!--CW = 0, CCW = 1, _180 = 2, NOT_ROTATE = 3-->
+		<Rotate>0</Rotate>
+	</Capture>
+	<Capture>
+		<ImageSize width="640" height="480"/>
+		<ImageParam brightness="128" contrast="128" hue="128" saturation="128"/>
+		<Crop left="10" right="10" top="0" bottom="0"/>
+		<!--CW = 0, CCW = 1, _180 = 2, NOT_ROTATE = 3-->
+		<Rotate>0</Rotate>
+	</Capture>
+</Config>
+

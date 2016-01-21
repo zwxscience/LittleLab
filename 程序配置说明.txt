@@ -1,0 +1,18 @@
+使用VS2010和opencv2.2和Daheng Imavision CGCard
+配置文件
+opencv_core220d.lib
+opencv_highgui220d.lib
+opencv_imgproc220d.lib
+
+
+
+C:\Users\wangyong\Desktop\Dev Libs\iconv-1.9.2.win32\include
+C:\OpenCV2.2\VS2010\include\opencv2
+C:\OpenCV2.2\VS2010\include
+C:\Program Files\Daheng Imavision\DH-CGCard\SDK\VC\Inc
+
+
+
+C:\Program Files\Daheng Imavision\DH-CGCard\SDK\VC\Lib;
+C:\OpenCV2.2\VS2010\lib;C:\Users\wangyong\Desktop\Dev Libs\iconv-1.9.2.win32\lib;
+
